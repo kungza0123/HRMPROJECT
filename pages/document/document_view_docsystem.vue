@@ -4,19 +4,28 @@
       <h3>พนักงานทั้งหมด</h3>
     </div>
     <v-card>
-      <v-flex xs12 sm6 md3>
-        <v-card-title>
-          <v-text-field
-            v-model="search"
-            append-icon="mdi-magnify"
-            label="Search"
-            single-line
-            hide-details
-          ></v-text-field>
-        </v-card-title>
-        
-      </v-flex>
-      
+      <v-col>
+        <v-flex xs12 sm6 md3>
+          <v-card-title>
+            <v-text-field
+              v-model="search"
+              append-icon="mdi-magnify"
+              label="Search"
+              single-line
+              hide-details
+            ></v-text-field>
+          </v-card-title>
+        </v-flex>
+
+        <v-row align="center" justify="space-around">
+          <span />
+          <v-btn tile color="success" to="./Addemployeeinformation">
+            <v-icon left> mdi-pencil </v-icon>
+            เพิ่มข้อมูล
+          </v-btn>
+        </v-row>
+      </v-col>
+
       <v-data-table :headers="headers" :items="desserts" :search="search"></v-data-table>
     </v-card>
   </div>

@@ -4,6 +4,7 @@
       <v-card>
         <div class="container">
           <img class="d-flex justify-center" src="@/assets/logo.png" alt="Vue.js Logo" />
+          <img class="d-flex justify-center" src="@/assets/logo.png" alt="Vue.js Logo" />
         </div>
 
         <v-card-title class="headline justify-center"> LOGIN </v-card-title>
