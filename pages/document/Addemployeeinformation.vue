@@ -1,46 +1,35 @@
 <template>
-    <v-card>
-     <form>
-    <v-text-field
-      v-model="name"
-      :error-messages="nameErrors"
-      :counter="10"
-      label="Name"
-      required
-      @input="$v.name.$touch()"
-      @blur="$v.name.$touch()"
-    ></v-text-field>
-    <v-text-field
-      v-model="email"
-      :error-messages="emailErrors"
-      label="E-mail"
-      required
-      @input="$v.email.$touch()"
-      @blur="$v.email.$touch()"
-    ></v-text-field>
-    <v-select
-      v-model="select"
-      :items="items"
-      :error-messages="selectErrors"
-      label="Item"
-      required
-      @change="$v.select.$touch()"
-      @blur="$v.select.$touch()"
-    ></v-select>
-    <v-checkbox
-      v-model="checkbox"
-      :error-messages="checkboxErrors"
-      label="Do you agree?"
-      required
-      @change="$v.checkbox.$touch()"
-      @blur="$v.checkbox.$touch()"
-    ></v-checkbox>
+  <v-card>
+    <v-form>
+      <v-container>
+      <v-row>
+      
+        <v-flex xs12 sm6 md3>
+        <v-col cols="12" sm="6">
+        
+            <v-text-field v-model="iduser" label="รหัสพนักงาน" outlined></v-text-field>
+          </v-col>
+        
+        </v-flex>
+        
 
-    <v-btn class="mr-4" @click="submit"> submit </v-btn>
-    <v-btn @click="clear"> clear </v-btn>
-  </form>
-    </v-card>
- 
+          <v-col cols="12" sm="6">
+            <v-text-field v-model="datef" label="วันที่เริ่มทำงาน" outlined></v-text-field>
+          </v-col>
+      </v-row>
+
+        <v-row>
+          <v-col cols="12" sm="6">
+            <v-text-field v-model="first" label="First Name" outlined></v-text-field>
+          </v-col>
+
+          <v-col cols="12" sm="6">
+            <v-text-field v-model="last" label="Last Name" outlined></v-text-field>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-form>
+  </v-card>
 </template>
 <script>
 import { validationMixin } from "vuelidate";

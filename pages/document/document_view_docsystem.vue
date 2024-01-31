@@ -20,13 +20,46 @@
         <v-row align="center" justify="space-around">
           <span />
           <v-btn tile color="success" to="./Addemployeeinformation">
-            <v-icon left> mdi-pencil </v-icon>
+            <v-icon left>mdi-pencil</v-icon>
             เพิ่มข้อมูล
           </v-btn>
         </v-row>
       </v-col>
 
-      <v-data-table :headers="headers" :items="desserts" :search="search"></v-data-table>
+      <v-data-table :headers="headers" :items="desserts" :search="search">
+        <template v-slot:item="{ item, index }">
+          <tr :style="{ backgroundColor: index % 2 === 0 ? '#FFE194' : '#faf1e4' }">
+            <td v-for="(value, key) in item" :key="key">
+              <span
+                v-if="key === 'department3'"
+                :class="{
+                  'blinking-text': value === 'กำลังทำงาน',
+                  'green-text': value === 'กำลังทำงาน',
+                }"
+                >{{ value }}</span
+              >
+              <span v-else>{{ value }}</span>
+            </td>
+            <td>
+              <v-btn icon to="./Addemployeeinformation">
+                <v-icon>mdi-pencil</v-icon>
+              </v-btn>
+
+              <v-btn icon>
+                <v-icon>mdi-delete</v-icon>
+              </v-btn>
+
+              <v-btn icon to="./Addemployeeinformation">
+                <v-icon>mdi-information</v-icon>
+              </v-btn>
+
+              <v-btn icon to="./Addemployeeinformation">
+                <v-icon>mdi-download</v-icon>
+              </v-btn>
+            </td>
+          </tr>
+        </template>
+      </v-data-table>
     </v-card>
   </div>
 </template>
@@ -49,7 +82,7 @@ export default {
         { text: "ฝ่าย ", value: "department1" },
         { text: "ตำแหน่ง ", value: "department2" },
         { text: "สถานะ ", value: "department3" },
-        { text: "edit-delete", value: "" },
+        { text: "เครื่องมือ", value: "action", sortable: false },
       ],
       desserts: [
         {
@@ -183,7 +216,29 @@ export default {
           department3: "กำลังทำงาน",
         },
       ],
+      methods: {
+        editEmployee(employee) {
+          // ดำเนินการที่คุณต้องการเมื่อคลิกที่ mdi-pencil
+          this.$router.push("/login");
+          console.log("Edit employee:", employee);
+        },
+      },
     };
   },
 };
 </script>
+<style scoped>
+.blinking-text {
+  animation: blink 1s infinite; /* Adjust animation duration as needed */
+}
+
+.green-text {
+  color: green;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+</style>

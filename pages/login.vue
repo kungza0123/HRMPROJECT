@@ -1,13 +1,18 @@
 <template>
   <v-row class="text-center d-flex align-center justify-center">
     <v-col cols="12" sm="8" md="6">
-      <v-card>
+    <div class="centero">
+     <v-card >
         <div class="container">
           <img class="d-flex justify-center" src="@/assets/logo.png" alt="Vue.js Logo" />
           <img class="d-flex justify-center" src="@/assets/logo.png" alt="Vue.js Logo" />
         </div>
 
-        <v-card-title class="headline justify-center"> LOGIN </v-card-title>
+        <v-card-title class="headline justify-center">
+          <div>
+            <h3>LOGIN</h3>
+          </div>
+        </v-card-title>
         <v-card-text>
           <v-sheet width="300" class="mx-auto">
             <v-form fast-fail @submit.prevent>
@@ -23,28 +28,28 @@
                 :rules="PasswordRules"
               ></v-text-field>
 
-              <v-btn type="submit" block class="mt-2" to="./document/document_view_docsystem">Login</v-btn>
+              <v-btn
+                type="submit"
+                block
+                class="mt-2"
+                to="./document/document_view_docsystem"
+                >Login</v-btn
+              >
             </v-form>
           </v-sheet>
         </v-card-text>
         <v-card-actions> </v-card-actions>
       </v-card>
+    
+    </div>
+     
     </v-col>
   </v-row>
 </template>
 
 <script>
-import { validationMixin } from "vuelidate";
-import { required, maxLength, email } from "vuelidate/lib/validators";
 export default {
-  //   mixins: [validationMixin],
-
-  // validations: {
-  //   Username: { required, maxLength: maxLength(10) },
-  //   email: { required, email },
-  //   select: { required },
-  // },
-
+  layout: "nonnav",
   data: () => ({
     Username: "",
     UsernameRules: [
@@ -64,25 +69,8 @@ export default {
     ],
   }),
 
-  // UsernameErrors () {
-  //       const errors = []
-  //       if (!this.$v.Usernamename.$dirty) return errors
-  //       // !this.$v.Usernamename.maxLength && errors.push('Name must be at most 10 characters long')
-  //       !this.$v.Usernamename.required && errors.push('Username is required.')
-  //       return errors
-  //     },
-  // PasswordErrors () {
-  //       const errors = []
-  //       if (!this.$v.Password.$dirty) return errors
-  //       // !this.$v.Password.maxLength && errors.push('Name must be at most 10 characters long')
-  //       !this.$v.Password.required && errors.push('Password is required.')
-  //       return errors
-  //     },
-
   methods: () => ({
-    submit(){
-      
-    }
+    submit() {},
   }),
 };
 </script>
@@ -91,11 +79,18 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 img {
   width: 200px;
   /* ปรับขนาดของรูปภาพตามต้องการ */
   height: auto;
+}
+.centero{
+  position: absolute;
+   top: 20%;
+  width: 45%; 
+  
 }
 </style>

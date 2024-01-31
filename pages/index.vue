@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <div class="text-center d-flex align-center justify-center">
-      <div class="pa-5 white--text">
+      <div class="pa-5 black--text">
         <h2>HELLO! YOU ARE WELCOME TO</h2>
         <h1>HEALTHWISE360</h1>
       </div>
@@ -19,7 +19,7 @@
 <script>
 
 export default {
-  layout: "index",
+  layout: "nonnav",
   data() {
     return {};
   },
