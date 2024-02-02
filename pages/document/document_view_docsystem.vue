@@ -1,8 +1,9 @@
 <template>
   <div>
     <div class="text-center d-flex align-center justify-center">
-      <h3>พนักงานทั้งหมด</h3>
+      <h2>พนักงานทั้งหมด</h2>
     </div>
+    <v-form>
     <v-card>
       <v-col>
         <v-flex xs12 sm6 md3>
@@ -52,6 +53,10 @@
         </template>
       </v-data-table>
     </v-card>
+    
+    
+    </v-form>
+    
   </div>
 </template>
 <script>
