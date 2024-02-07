@@ -2,7 +2,7 @@
   <div class="container">
     <v-card class="mx-auto pa-15 pb-8" elevation="8" max-width="555" rounded="lg">
       <div class="centero">
-        <img class="d-flex justify-center" src="@/assets/S16.png" alt="Vue.js Logo" />
+        <img class="d-flex justify-center" src="@/Img/S16.png" alt="Vue.js Logo" />
       </div>
 
       <v-card-title class="headline justify-center">
