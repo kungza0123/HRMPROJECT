@@ -85,7 +85,7 @@ export default {
     goToLogout() {
       // นำทางไปที่หน้า Profile
       // ตัวอย่าง: this.$router.push('/profile');
-      this.$router.push("/login");
+      this.$router.push("/");
     },
     closeDrawerOnOutsideClick() {
       if (this.drawer) {
