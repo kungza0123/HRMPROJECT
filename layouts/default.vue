@@ -3,14 +3,9 @@
     <v-app-bar fixed app color="#FFE194">
       <v-app-bar-nav-icon @click.native.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <!-- <img @click="goToHome" src="Logo.png" style="width: 5rem; cursor: pointer" /> -->
+      <img class="d-flex justify-center" src="@/Img/8.ส้มชูมือถือ.png" alt="Vue.js Logo" style="max-width: 100%; max-height: 100%;" @click="goToHome" />
       <v-spacer />
-      <v-btn
-        rounded
-        text
-        @click="goToLogout"
-        style="font-size: medium"
-        class="red--text"
-        
+      <v-btn rounded text @click="goToLogout" style="font-size: medium" class="red--textlogout-btn" color="red"
         >Logout</v-btn
       >
     </v-app-bar>
@@ -28,19 +23,19 @@
 
         <v-list-item link>
           <v-list-item-icon>
-            <v-icon>mdi-account</v-icon>
+            <v-icon>mdi-account-minus</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title @click="goToresign" >พนักงานลาออก</v-list-item-title>
+            <v-list-item-title @click="goToresign">พนักงานลาออก</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
         <v-list-item link>
           <v-list-item-icon>
-            <v-icon>mdi-graph</v-icon>
+            <v-icon>mdi-chart-areaspline-variant</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
-            <v-list-item-title @click="goTograph" >report garp</v-list-item-title>
+            <v-list-item-title @click="goTograph">report garp</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -53,7 +48,7 @@
       <v-container>
         <div @click="closeDrawerOnOutsideClick">
           <!-- Your main content goes here -->
-          
+
           <Nuxt />
         </div>
       </v-container>
@@ -72,25 +67,25 @@ export default {
     goToHome() {
       // นำทางไปที่หน้า Home
       // ตัวอย่าง: this.$router.push('/home');
-      this.$router.push('./document_view_docsystem');
+      this.$router.push("./document_view_docsystem");
       this.drawer = false;
     },
     goToresign() {
       // นำทางไปที่หน้า Home
       // ตัวอย่าง: this.$router.push('/home');
-      this.$router.push('./document_view_docsystem');
+      this.$router.push("./document_view_docsystem");
       this.drawer = false;
     },
     goTograph() {
       // นำทางไปที่หน้า Home
       // ตัวอย่าง: this.$router.push('/home');
-      this.$router.push('./document_view_docsystem');
+      this.$router.push("./document_view_docsystem");
       this.drawer = false;
     },
     goToLogout() {
       // นำทางไปที่หน้า Profile
       // ตัวอย่าง: this.$router.push('/profile');
-      this.$router.push('/login');
+      this.$router.push("/login");
     },
     closeDrawerOnOutsideClick() {
       if (this.drawer) {
@@ -100,3 +95,9 @@ export default {
   },
 };
 </script>
+<style>
+.red--textlogout-btn:hover {
+  background-color: red !important;
+  color: white !important;
+}
+</style>

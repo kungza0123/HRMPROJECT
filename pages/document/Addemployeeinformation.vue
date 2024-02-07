@@ -4,8 +4,11 @@
       <h2>เพิ่มข้อมูลพนักงาน</h2>
     </div>
 
-    <v-form>
-      <v-card>
+    
+      <v-card class="mx-auto" elevation="8" max-width="mx-auto" rounded="lg">
+      <v-sheet width="auto" class="mx-auto">
+        <v-form>
+         <v-card-text >
         <v-container>
           <v-row>
             <h3 class="mr-9 mt-6">รหัสพนักงาน :</h3>
@@ -158,8 +161,19 @@
           </center>
           
         </v-container>
+        
+        
+        </v-card-text>
+        
+        
+        
+        </v-form>
+       
+       
+      </v-sheet>
+       
       </v-card>
-    </v-form>
+   
   </div>
 </template>
 <script>

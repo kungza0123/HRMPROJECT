@@ -3,17 +3,18 @@
     <div class="text-center d-flex align-center justify-center">
       <h2>พนักงานทั้งหมด</h2>
     </div>
-    <v-form>
+    
     <v-card>
-      <v-col>
+      <v-form>
+       <v-col>
         <v-flex xs12 sm6 md3>
           <v-card-title>
             <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line
-              hide-details></v-text-field>
+              hide-details ></v-text-field>
           </v-card-title>
         </v-flex>
 
-        <v-row align="center" justify="space-around">
+        <v-row align="center" justify="space-around" >
           <span />
           <v-btn tile color="success" to="./Addemployeeinformation">
             <v-icon left>mdi-pencil</v-icon>
@@ -52,10 +53,14 @@
           </tr>
         </template>
       </v-data-table>
+    
+      
+      
+      </v-form>
+     
     </v-card>
     
     
-    </v-form>
     
   </div>
 </template>

@@ -2,7 +2,8 @@
   <div class="container">
     <v-card class="mx-auto pa-15 pb-8" elevation="8" max-width="555" rounded="lg">
       <div class="centero">
-        <img class="d-flex justify-center" src="@/Img/S16.png" alt="Vue.js Logo" />
+        <img class="d-flex justify-center shake" src="@/Img/S16.png" alt="Vue.js Logo" 
+             @mouseenter="startShaking" @mouseleave="stopShaking" />
       </div>
 
       <v-card-title class="headline justify-center">
@@ -37,7 +38,9 @@
               block
               class="mt-2"
               to="./document/document_view_docsystem"
-            >Login</v-btn>
+              
+              >Login</v-btn
+            >
           </v-form>
         </v-sheet>
       </v-card-text>
@@ -52,6 +55,12 @@ export default {
   methods: {
     togglePasswordVisibility() {
       this.visible = !this.visible;
+    },
+    startShaking() {
+      this.$el.querySelector('.shake').classList.add('shaking');
+    },
+    stopShaking() {
+      this.$el.querySelector('.shake').classList.remove('shaking');
     },
   },
   data: () => ({
@@ -96,7 +105,14 @@ img {
 }
 
 .v-btn:hover {
-  background-color: #FFB319 !important;
+  background-color: #ffb319 !important;
   color: white !important;
+}
+.shake {
+  transition: transform 0.1s ease-in-out;
+}
+
+.shaking {
+  transform: translateX(-5px); /* Adjust the distance as needed */
 }
 </style>
